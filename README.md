@@ -62,7 +62,7 @@ since some (GitHub platform features especially) need their own checkers.
 | 19 | Conditional config (`includeIf`) | Config | ⬜ | |
 | 20 | Sparse-checkout + shallow/partial clone | Exchange | ⬜ | |
 | 21 | `format-patch` / `git am` | Exchange | ⬜ | |
-| 22 | `git bundle` / `git archive` + `git maintenance` | Exchange | ⬜ | |
+| 22 | `git bundle` / `git archive` | Exchange | ⬜ | |
 | 23 | Branch protection + CODEOWNERS + required checks + merge queue | GitHub | ⬜ | |
 | 24 | GitHub Actions (matrix, reusable/composite workflows, environments) | GitHub | ⬜ | |
 | 25 | Release engineering (semver tags, notes, Dependabot, merge strategies) | GitHub | ⬜ | |

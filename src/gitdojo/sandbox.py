@@ -58,3 +58,14 @@ def run_git(
         check=check,
         env=env,
     )
+
+
+def run_gh(args: list[str], check: bool = False) -> subprocess.CompletedProcess:
+    """Run a `gh` command, read-only calls only (GitHub-platform levels never
+    mutate real repo settings like branch protection -- only the human does)."""
+    return subprocess.run(
+        ["gh", *args],
+        capture_output=True,
+        text=True,
+        check=check,
+    )

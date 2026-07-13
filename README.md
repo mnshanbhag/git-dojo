@@ -33,6 +33,15 @@ On success, `gitdojo check` records the level as complete: it writes
 done. That's the only thing that gets tracked — no scratch work, no failed
 attempts, no sandbox contents.
 
+Levels 23-25 are the exception: branch protection, Actions, and releases
+only mean anything server-side, so they run against a real disposable
+GitHub repo (`git-dojo-gh-practice`) instead of a purely local sandbox.
+`gitdojo check` only ever *reads* that repo's state via `gh` — it never
+configures branch protection itself, since that's an access-control
+change; you do that part yourself (through the GitHub UI or your own
+`gh api` calls), same as every other level's "you run the command, we
+verify it" model.
+
 ## Curriculum
 
 Only levels with an entry in `src/gitdojo/levels/` are playable so far;
@@ -63,8 +72,8 @@ since some (GitHub platform features especially) need their own checkers.
 | 20 | Sparse-checkout + shallow/partial clone | Exchange | ⬜ | |
 | 21 | `format-patch` / `git am` | Exchange | ⬜ | |
 | 22 | `git bundle` / `git archive` | Exchange | ⬜ | |
-| 23 | Branch protection + CODEOWNERS + required checks + merge queue | GitHub | ⬜ | |
-| 24 | GitHub Actions (matrix, reusable/composite workflows, environments) | GitHub | ⬜ | |
-| 25 | Release engineering (semver tags, notes, Dependabot, merge strategies) | GitHub | ⬜ | |
+| 23 | Branch protection + CODEOWNERS + required status checks | GitHub | ⬜ | |
+| 24 | GitHub Actions: matrix builds | GitHub | ⬜ | |
+| 25 | Release engineering: semver tag + release notes | GitHub | ⬜ | |
 
 Status legend: ⬜ not started · ✅ done

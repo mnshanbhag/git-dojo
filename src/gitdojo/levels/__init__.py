@@ -6,10 +6,14 @@ command(s), shown/logged only on success), setup(sandbox_dir), and
 check(sandbox_dir) -> (bool, str).
 """
 
-from . import level_01
+from . import level_01, level_02, level_03, level_04, level_05
 
 LEVELS = {
     level_01.ID: level_01,
+    level_02.ID: level_02,
+    level_03.ID: level_03,
+    level_04.ID: level_04,
+    level_05.ID: level_05,
 }
 
 

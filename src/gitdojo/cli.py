@@ -1,5 +1,6 @@
 import argparse
 import datetime as dt
+import re
 from pathlib import Path
 
 from gitdojo import levels, state
@@ -80,10 +81,15 @@ def cmd_status(args: argparse.Namespace) -> None:
         print(f"  Level {level_id}: {levels.LEVELS[level_id].TITLE} -- {mark}")
 
 
+def _slugify(title: str) -> str:
+    slug = re.sub(r"[^a-z0-9]+", "-", title.lower())
+    return slug.strip("-")
+
+
 def _log_completion(root: Path, level) -> None:
     logs_dir = root / "logs"
     logs_dir.mkdir(exist_ok=True)
-    slug = level.TITLE.lower().replace(" ", "-").replace(":", "").replace(",", "")
+    slug = _slugify(level.TITLE)
     log_file = logs_dir / f"level-{level.ID:02d}-{slug}.md"
     log_file.write_text(
         f"# Level {level.ID} -- {level.TITLE}\n\n"
@@ -107,7 +113,7 @@ def _update_readme(root: Path, level) -> None:
             cells = line.split("|")
             # cells: ['', ' 1 ', ' Title ', ' Category ', ' Status ', ' Log ', '']
             cells[4] = " ✅ "
-            slug = level.TITLE.lower().replace(" ", "-").replace(":", "").replace(",", "")
+            slug = _slugify(level.TITLE)
             cells[5] = f" [log](logs/level-{level.ID:02d}-{slug}.md) "
             lines[i] = "|".join(cells)
             break

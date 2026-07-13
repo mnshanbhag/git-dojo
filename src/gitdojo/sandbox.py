@@ -1,6 +1,8 @@
 """Helpers for locating the project root and running git inside the sandbox."""
 
+import os
 import shutil
+import stat
 import subprocess
 from pathlib import Path
 
@@ -24,10 +26,15 @@ def sandbox_path(root: Path) -> Path:
     return root / SANDBOX_DIRNAME
 
 
+def _force_remove_readonly(func, path, exc_info) -> None:
+    os.chmod(path, stat.S_IWRITE)
+    func(path)
+
+
 def reset_sandbox(root: Path) -> Path:
     path = sandbox_path(root)
     if path.exists():
-        shutil.rmtree(path)
+        shutil.rmtree(path, onexc=_force_remove_readonly)
     path.mkdir(parents=True)
     return path
 

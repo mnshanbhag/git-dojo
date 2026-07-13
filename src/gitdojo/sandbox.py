@@ -31,10 +31,15 @@ def _force_remove_readonly(func, path, exc_info) -> None:
     func(path)
 
 
-def reset_sandbox(root: Path) -> Path:
-    path = sandbox_path(root)
+def remove_dir(path: Path) -> None:
+    """Remove a directory tree, clearing read-only bits git sometimes sets."""
     if path.exists():
         shutil.rmtree(path, onexc=_force_remove_readonly)
+
+
+def reset_sandbox(root: Path) -> Path:
+    path = sandbox_path(root)
+    remove_dir(path)
     path.mkdir(parents=True)
     return path
 

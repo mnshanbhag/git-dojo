@@ -4,33 +4,21 @@ Each level module exposes: ID, TITLE, CATEGORY, PROMPT, HINTS (list[str],
 revealed one at a time every 3 failed attempts), CANONICAL (the reference
 command(s), shown/logged only on success), setup(sandbox_dir), and
 check(sandbox_dir) -> (bool, str).
+
+Modules are discovered automatically by filename (level_NN.py) rather than
+listed by hand, since this grows to 25 entries.
 """
 
-from . import (
-    level_01,
-    level_02,
-    level_03,
-    level_04,
-    level_05,
-    level_06,
-    level_07,
-    level_08,
-    level_09,
-    level_10,
-)
+import importlib
+import pkgutil
 
-LEVELS = {
-    level_01.ID: level_01,
-    level_02.ID: level_02,
-    level_03.ID: level_03,
-    level_04.ID: level_04,
-    level_05.ID: level_05,
-    level_06.ID: level_06,
-    level_07.ID: level_07,
-    level_08.ID: level_08,
-    level_09.ID: level_09,
-    level_10.ID: level_10,
-}
+LEVELS = {}
+
+for _module_info in pkgutil.iter_modules(__path__):
+    if not _module_info.name.startswith("level_"):
+        continue
+    _module = importlib.import_module(f"{__name__}.{_module_info.name}")
+    LEVELS[_module.ID] = _module
 
 
 def get(level_id: int):

@@ -49,7 +49,7 @@ since some (GitHub platform features especially) need their own checkers.
 | 6 | Splitting a commit (`reset -p` / rebase `edit`) | History | ⬜ | |
 | 7 | `git bisect` (manual + `bisect run`) | History | ⬜ | |
 | 8 | Reflog recovery | History | ⬜ | |
-| 9 | `rerere` + `filter-repo` | History | ⬜ | |
+| 9 | `rerere` (recorded conflict resolution) | History | ⬜ | |
 | 10 | Cherry-pick backport | Branching | ⬜ | |
 | 11 | Merge strategies (`-X ours`/`theirs`, octopus merge) | Branching | ⬜ | |
 | 12 | Worktrees | Branching | ⬜ | |

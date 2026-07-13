@@ -44,11 +44,17 @@ def reset_sandbox(root: Path) -> Path:
     return path
 
 
-def run_git(cwd: Path, args: list[str], check: bool = True) -> subprocess.CompletedProcess:
+def run_git(
+    cwd: Path,
+    args: list[str],
+    check: bool = True,
+    env: dict | None = None,
+) -> subprocess.CompletedProcess:
     return subprocess.run(
         ["git", *args],
         cwd=cwd,
         capture_output=True,
         text=True,
         check=check,
+        env=env,
     )

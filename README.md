@@ -56,9 +56,9 @@ since some (GitHub platform features especially) need their own checkers.
 | 13 | Submodule vs subtree | Branching | ⬜ | |
 | 14 | Advanced stash (`-p`, to-branch, multiple) | Branching | ⬜ | |
 | 15 | Hooks (`commit-msg`) | Config | ⬜ | |
-| 16 | `.gitattributes` (diff/merge drivers, union merge, EOL) | Config | ⬜ | |
+| 16 | `.gitattributes` (union merge driver) | Config | ⬜ | |
 | 17 | Git LFS | Config | ⬜ | |
-| 18 | Signing (GPG/SSH commits & tags + verify) | Config | ⬜ | |
+| 18 | Signing (SSH commits & tags + verify) | Config | ⬜ | |
 | 19 | Conditional config (`includeIf`) | Config | ⬜ | |
 | 20 | Sparse-checkout + shallow/partial clone | Exchange | ⬜ | |
 | 21 | `format-patch` / `git am` | Exchange | ⬜ | |

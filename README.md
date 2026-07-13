@@ -12,7 +12,7 @@ logged in [`logs/`](logs/) with the commands used and what was learned.
 
 | # | Level | Category | Status | Log |
 |---|-------|----------|--------|-----|
-| 1 | Plumbing basics (`cat-file`, `hash-object`, `ls-tree`, `ls-files`) | Internals | ⬜ | |
+| 1 | Plumbing basics (`cat-file`, `hash-object`, `ls-tree`, `ls-files`) | Internals | ✅ | [log](logs/level-01-plumbing-basics.md) |
 | 2 | Diff & blame mastery (diff algorithms, `--word-diff`, `blame --ignore-revs`) | Internals | ⬜ | |
 | 3 | `git notes` | Internals | ⬜ | |
 | 4 | Interactive rebase (squash/fixup/autosquash/edit/reorder) | History | ⬜ | |

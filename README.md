@@ -50,11 +50,11 @@ since some (GitHub platform features especially) need their own checkers.
 
 | # | Level | Category | Status | Log |
 |---|-------|----------|--------|-----|
-| 1 | Plumbing basics (`cat-file`, `hash-object`, `ls-tree`, `ls-files`) | Internals | ⬜ | |
-| 2 | Diff & blame mastery (diff algorithms, `--word-diff`, `blame --ignore-revs`) | Internals | ⬜ | |
-| 3 | `git notes` | Internals | ⬜ | |
-| 4 | Interactive rebase (squash/fixup/autosquash/edit/reorder) | History | ⬜ | |
-| 5 | `rebase --onto` | History | ⬜ | |
+| 1 | Plumbing basics (`cat-file`, `hash-object`, `ls-tree`, `ls-files`) | Internals | ✅ | [log](logs/level-01-plumbing-basics-content-addressing.md) |
+| 2 | Diff & blame mastery (diff algorithms, `--word-diff`, `blame --ignore-revs`) | Internals | ✅ | [log](logs/level-02-diff-blame-mastery-blame-ignore-rev.md) |
+| 3 | `git notes` | Internals | ✅ | [log](logs/level-03-git-notes.md) |
+| 4 | Interactive rebase (squash/fixup/autosquash/edit/reorder) | History | ✅ | [log](logs/level-04-interactive-rebase-fixup-autosquash.md) |
+| 5 | `rebase --onto` | History | ✅ | [log](logs/level-05-rebase-onto-reparenting-a-branch.md) |
 | 6 | Splitting a commit (`reset -p` / rebase `edit`) | History | ⬜ | |
 | 7 | `git bisect` (manual + `bisect run`) | History | ⬜ | |
 | 8 | Reflog recovery | History | ⬜ | |

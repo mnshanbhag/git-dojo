@@ -55,9 +55,9 @@ since some (GitHub platform features especially) need their own checkers.
 | 3 | `git notes` | Internals | ✅ | [log](logs/level-03-git-notes.md) |
 | 4 | Interactive rebase (squash/fixup/autosquash/edit/reorder) | History | ✅ | [log](logs/level-04-interactive-rebase-fixup-autosquash.md) |
 | 5 | `rebase --onto` | History | ✅ | [log](logs/level-05-rebase-onto-reparenting-a-branch.md) |
-| 6 | Splitting a commit (`reset -p` / rebase `edit`) | History | ⬜ | |
-| 7 | `git bisect` (manual + `bisect run`) | History | ⬜ | |
-| 8 | Reflog recovery | History | ⬜ | |
+| 6 | Splitting a commit (`reset -p` / rebase `edit`) | History | ✅ | [log](logs/level-06-splitting-a-commit.md) |
+| 7 | `git bisect` (manual + `bisect run`) | History | ✅ | [log](logs/level-07-git-bisect.md) |
+| 8 | Reflog recovery | History | ✅ | [log](logs/level-08-reflog-recovery.md) |
 | 9 | `rerere` (recorded conflict resolution) | History | ⬜ | |
 | 10 | Cherry-pick backport | Branching | ⬜ | |
 | 11 | Merge strategies (`-X ours`/`theirs`, octopus merge) | Branching | ⬜ | |
